@@ -30,6 +30,11 @@ public class ApiController {
         return ResponseEntity.ok(categoryRepository.findByCategoryName("%a%", CategoryProjection.class));
     }
 
+    @GetMapping("/api/database-spring-projection/get-data-by-sql")
+    public ResponseEntity<List<CategoryProjection>> getDataBySql() {
+        return ResponseEntity.ok(categoryRepository.findByCategoryName_SQL("%a%", CategoryProjection.class));
+    }
+
 }
 
 

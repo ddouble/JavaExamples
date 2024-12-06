@@ -11,5 +11,5 @@ public interface CategoryFullProjection {
 
     byte[] getPicture();
 
-    List<ProductProjection> getProducts();
+    List<ProductFullProjection> getProducts();
 }
