@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAV1BMVEUAXw+xqqEAVQB3nnj///8AXAEAXgkAXw8AXw8AXw+LmYERaB7Q4dM2djv2+/cmby1hhl6eopKvy7NNhlOTuZmBrYhhl2dCfUamxqtxj2zk7ua70b6+1sEicqDJAAAACXRSTlPr////////R+rOoES5AAAAyklEQVQokZ3S2RKDIAwFUIEklkUEd9v+/3cW92XEacvrmRuSTJI0kZGXpEnUgt5Y0N+RdEsxJC2yCJLM6oJflg3kasjxAknmrq9gCh6RMHdKdHYO7hEH8uJl4c1PoyBlvWJKGAAo8YjYKs+Yq5/BCk0HxJ4x5tsuEFg3B2fEMphqhhhAJemInnlR2dHM8uOKwV4jga1XW1A1ZjLolm5WpLybzWRbcOmWmwtbRynHbgq9t20J2FRCc5JXGJbOT/TXDX2Ft0edPqKWfgA4uRuTyt+fmwAAAABJRU5ErkJggg==" />
+<p th:text="|Hello, ${name}!|" />
+<p>This is a page rendered by thymeleaf template engine</p>
+<p>Try to add a 'name' parameter to the url: <a href="?name=Kitty">?name=Kitty</a></p>
+</body>
+</html>
