@@ -20,6 +20,10 @@ public interface OrderDetailProjection {
         return getUnitPrice().multiply(BigDecimal.valueOf(getQuantity()));
     }
 
+    default BigDecimal getTotal3() {
+        return getUnitPrice().multiply(BigDecimal.valueOf(getQuantity()));
+    }
+
     // calculated field by Spring SpEL
     @Value("#{target.unitPrice * target.quantity}")
     BigDecimal getTotal2();

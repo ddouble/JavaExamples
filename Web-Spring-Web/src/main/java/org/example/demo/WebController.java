@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @org.springframework.stereotype.Controller
 public class WebController {
 
-    @GetMapping("/database-spring-web/querystring")
+    @GetMapping("/web-spring-web/querystring")
     public String greeting(
             @RequestParam(name = "name", required = false, defaultValue = "World")
             String name,
