@@ -9,16 +9,18 @@ import java.util.Objects;
 /**
  * DTO for {@link Product}
  */
-public class ProductDto implements Serializable {
+public class ProductFullDto implements Serializable {
     private Integer id;
     private String productName;
+    private BigDecimal unitPrice;
 
-    public ProductDto() {
+    public ProductFullDto() {
     }
 
-    public ProductDto(Integer id, String productName, BigDecimal unitPrice) {
+    public ProductFullDto(Integer id, String productName, BigDecimal unitPrice) {
         this.id = id;
         this.productName = productName;
+        this.unitPrice = unitPrice;
     }
 
     public Integer getId() {
@@ -37,24 +39,34 @@ public class ProductDto implements Serializable {
         this.productName = productName;
     }
 
+    public BigDecimal getUnitPrice() {
+        return unitPrice;
+    }
+
+    public void setUnitPrice(BigDecimal unitPrice) {
+        this.unitPrice = unitPrice;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ProductDto entity = (ProductDto) o;
+        ProductFullDto entity = (ProductFullDto) o;
         return Objects.equals(this.id, entity.id) &&
-                Objects.equals(this.productName, entity.productName);
+                Objects.equals(this.productName, entity.productName) &&
+                Objects.equals(this.unitPrice, entity.unitPrice);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, productName);
+        return Objects.hash(id, productName, unitPrice);
     }
 
     @Override
     public String toString() {
         return getClass().getSimpleName() + "(" +
                 "id = " + id + ", " +
-                "productName = " + productName + ")";
+                "productName = " + productName + ", " +
+                "unitPrice = " + unitPrice + ")";
     }
 }

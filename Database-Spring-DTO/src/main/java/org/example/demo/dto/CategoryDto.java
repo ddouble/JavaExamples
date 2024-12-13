@@ -1,60 +1,32 @@
 package org.example.demo.dto;
 
-import org.example.demo.model.Category;
-
 import java.io.Serializable;
-import java.util.List;
 import java.util.Objects;
 
 /**
- * DTO for {@link Category}
+ * DTO for {@link org.example.demo.model.Category}
  */
 public class CategoryDto implements Serializable {
-    private Integer id;
-    private String categoryName;
-    private String description;
-    private List<ProductDto> products;
+    private final Integer id;
+    private final String categoryName;
+    private final byte[] picture;
 
-    public CategoryDto() {
-    }
-
-    public CategoryDto(Integer id, String categoryName, String description, List<ProductDto> products) {
+    public CategoryDto(Integer id, String categoryName, byte[] picture) {
         this.id = id;
         this.categoryName = categoryName;
-        this.description = description;
-        this.products = products;
+        this.picture = picture;
     }
 
     public Integer getId() {
         return id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     public String getCategoryName() {
         return categoryName;
     }
 
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public List<ProductDto> getProducts() {
-        return products;
-    }
-
-    public void setProducts(List<ProductDto> products) {
-        this.products = products;
+    public byte[] getPicture() {
+        return picture;
     }
 
     @Override
@@ -64,13 +36,12 @@ public class CategoryDto implements Serializable {
         CategoryDto entity = (CategoryDto) o;
         return Objects.equals(this.id, entity.id) &&
                 Objects.equals(this.categoryName, entity.categoryName) &&
-                Objects.equals(this.description, entity.description) &&
-                Objects.equals(this.products, entity.products);
+                Objects.equals(this.picture, entity.picture);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, categoryName, description, products);
+        return Objects.hash(id, categoryName, picture);
     }
 
     @Override
@@ -78,7 +49,6 @@ public class CategoryDto implements Serializable {
         return getClass().getSimpleName() + "(" +
                 "id = " + id + ", " +
                 "categoryName = " + categoryName + ", " +
-                "description = " + description + ", " +
-                "products = " + products + ")";
+                "picture = " + picture + ")";
     }
 }
