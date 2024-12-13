@@ -72,7 +72,7 @@ public class ApiController {
         Page<Category> list = categoryRepository.findAll(pageable);
 
         return ResponseEntity.ok(
-                list.map(Mappers.getMapper( CategoryMapper.class )::toDto)
+                list.map(CategoryMapper.INSTANCE::toDto)
         );
     }
 
