@@ -75,7 +75,7 @@ public class ApiController {
     public ResponseEntity<CategoryFullDto> mapDtoWithModelStruct() {
         // map dto automatically
         Category category = entityManager.find(Category.class, 1L);
-        return ResponseEntity.ok(Mappers.getMapper( CategoryMapper.class ).toFullDto(category));
+        return ResponseEntity.ok(Mappers.getMapper(CategoryMapper.class).toFullDto(category));
     }
 
     @GetMapping("/api/database-spring-dto/pagination")
