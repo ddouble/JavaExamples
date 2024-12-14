@@ -50,6 +50,11 @@ public class ApiController {
 
     }
 
+    /**
+     * ModelMapper is a runtime mapping library that allows you to map objects from one type to another.
+     * It provides a simple and flexible API for mapping objects, making it easy to map between different object types.
+     *
+     */
     @GetMapping("/api/database-spring-dto/map-dto-with-modelmapper")
     public ResponseEntity<CategoryDto> mapDtoWithModelMapper() {
         // map dto automatically
@@ -57,6 +62,15 @@ public class ApiController {
         return ResponseEntity.ok(modelMapper.map(category, CategoryDto.class));
     }
 
+
+    /**
+     * MapStruct is a code generation library that generates type-safe, immutable mapper implementations at compile time.
+     *
+     * Performance Priority: MapStruct is better as it performs mapping at compile time
+     * Ease and Flexibility: ModelMapper offers more flexibility and requires less configuration.
+     * Error Checking: MapStruct provides compile-time error checking, making it more reliable.
+     *
+     */
     @GetMapping("/api/database-spring-dto/map-dto-with-mapstruct")
     public ResponseEntity<CategoryFullDto> mapDtoWithModelStruct() {
         // map dto automatically
