@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test CORS</title>
+    <script>
+        function callRestfulApi() {
+            const requestOptions = {
+                method: "GET",
+                redirect: "follow"
+            };
+
+            fetch("http://127.0.0.1:8080/api/web-spring-web/restful", requestOptions)
+                .then((response) => response.text())
+                .then((result) => console.log(result))
+                .catch((error) => console.error(error));
+        }
+
+        function callCorsGlobalApi() {
+            const requestOptions = {
+                method: "GET",
+                redirect: "follow"
+            };
+
+            fetch("http://127.0.0.1:8080/api/web-spring-web/cors-global", requestOptions)
+                .then((response) => response.text())
+                .then((result) => console.log(result))
+                .catch((error) => console.error(error));
+        }
+
+
+    </script>
+</head>
+<body>
+<button onclick="callRestfulApi()">call /api/web-spring-web/restful</button>
+<button onclick="callCorsGlobalApi()">call /api/web-spring-web/cors-global</button>
+</body>
+</html>
